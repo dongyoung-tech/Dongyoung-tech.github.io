@@ -1,0 +1,58 @@
+---
+title:  "데이터베이스 생성" 
+excerpt: "데이터베이스 를 생성해보자"
+
+categories:
+  - Mysql
+tags:
+  - [mysql , 데이터베이스 ]
+
+toc: true
+toc_sticky: true
+ 
+date: 2022-09-19
+last_modified_at: 2022-09-19
+
+---
+
+## 자료를 검색하고 수정해보자
+
+### select 구문에서 다양한 함수를 사용하여 자료를 검색할 수 있다.
+```
+select count(*) from student; => 테이블에 등록된 자료의 개수 출력.
+select sum(kor) , avg(kor) from student; => 국어 점수의 총점과 평균을 출력.
+select max(kor) , min(kor) from student; => 국어 점수의 최댓값 과 최소값 을 출력.
+```
+<br>
+
+### 파일을 읽어오기
+다른 파일 에 여러줄의 구문을 적어서 저장한다음 불러오면 일일이 칠 필요없이 한번에 적용가능하다.
+```
+source data.sql; => data.sql 이라는 파일을 읽어온다. 파일은 mysql 폴더에 있는 bin 폴더에 저장해야 한다.
+```
+<br>
+
+### 조건에 맞는 자료를 검색하기
+select 문 뒤에 where + 조건 을 입력하여 조건에 맞는 자료만 출력해볼수 있다.
+```
+select * from student where kor>90 and eng>90; => 국어와 영어가 90점이상인 열을 출력.
+select * from where name like = "이%"; => 성이 '이' 인 사람만 출력 / 특정 문자를 포함하는 자료를 검색할때는 like;를 사용한다.
+```
+<br>
+
+### 자료를 정렬해서 출력하기
+자료를 정렬해서 보고싶을때는 order by 를 사용한다 (sort 아님!)
+```
+select * from student order by kor asc; => 국어를 기준으로 오름차순으로 출력.
+select * from student order bt kor desc; => 국어를 기준으로 내림차순으로 출력.
+```
+
+<br>
+
+### 테이블에 삽입한 자료 수정하기
+테이블에 삽입한 자료를 수정할때는 update 구문을 사용하면 된다
+(뒤에 조건을 추가하고 싶으면 where + 조건 구문을 사용하면 된다)
+```
+update student set kor = kor+10; => 모든학생의 국어점수에 10점을 더한다
+update student set kor = 100 where name = "이동영"; => student 테이블에서 name 이 이동영인 줄의 kor을 100으로 변경
+```
