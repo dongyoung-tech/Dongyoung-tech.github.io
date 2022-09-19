@@ -1,6 +1,6 @@
 ---
-title:  "데이터베이스 생성" 
-excerpt: "데이터베이스 를 생성해보자"
+title:  "데이터베이스 의 자료검색 및 수정" 
+excerpt: "데이터베이스 의 자료를 검색하고 수정해보자"
 
 categories:
   - Mysql
