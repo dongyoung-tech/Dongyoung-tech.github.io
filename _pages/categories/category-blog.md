@@ -16,6 +16,12 @@ layout: archive
 permalink: categories/Mysql
 author_profile: true
 sidebar_main: true
+
+title: "Php"
+layout: archive
+permalink: categories/Php
+author_profile: true
+sidebar_main: true
 ---
 
 
