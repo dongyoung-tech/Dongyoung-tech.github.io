@@ -1,0 +1,69 @@
+---
+title:  "2022-09-21 프로그래머스 오답정리" 
+excerpt: "프로그래머스 문제풀이"
+
+categories:
+  - coding-test
+tags:
+  - [javascript]
+
+toc: true
+toc_sticky: true
+ 
+date: 2022-09-22
+last_modified_at: 2020-09-22
+
+---
+
+아직 초보라 구현하는(푸는)데 집중을 해보았습니다 
+
+출처: 프로그래머스 코딩 테스트 연습, https://school.programmers.co.kr/learn/challenges
+
+<br>
+
+## 자연수 를 뒤집어 배열로 만들기
+12345를 입력받으면 "12345" 로 변환해준다음 ,  
+자바스크립트의 push 를 사용하여서 배열에 54321 순으로 넣어준다
+```
+function solution(n) {
+    var answer = [];
+    var str = `${n}`;
+    for(var i=str.length-1; i>=0; i--){
+        answer.push(parseInt(str[i]));
+    }
+    return answer;
+}
+```
+<br>
+
+## 문자열 내에 특정 알파벳들 개수 비교하기
+문자열을 toUpperCase 로 전부 대문자로 바꿔준다음 개수를 비교한다 <br>
+구글링을 해보니 특정 알파벳의 개수를 구할때는 matchAll 을 사용한다고 해던데... 정확한 원리는 더 공부를 해봐야할것 같다.
+
+```
+function solution(s){
+    var answer = true;
+    var us = s.toUpperCase();
+    var p = [...us.matchAll(/P/g)].length;
+    var s = [...us.matchAll(/Y/g)].length;
+    
+    return p == s;
+}
+```
+<br>
+
+## 정수 내림차순 배치하기
+숫자를   문자열로 바꾸고 sort 를 사용하여 정렬한다음 join 함수를 사용하여 다시 숫자로 바꾸어준다
+```
+function solution(n) {
+    var answer = 0;
+    var num = `${n}`;
+    var str = [];
+    for(var i=0; i<num.length; i++){
+        str.push(parseInt(num[i]));
+    }
+    
+    answer = str.sort((a,b) => b-a);
+    return +answer.join("");;
+}
+```
