@@ -51,3 +51,10 @@ export const SayHello() ={....}
 import {name} from './person.js'
 import {SayHello} from './person.js'
 ```
+
+하지만 이런 경우에도 as 키워드를 써서 자유롭게 이름을 붙힐수 있다.
+
+```
+//index.js
+import {SayHello as Hello} from './person.js'
+```
