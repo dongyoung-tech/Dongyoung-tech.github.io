@@ -16,7 +16,7 @@ last_modified_at: 2023-06-27
 
 <h1>리액트 Export & Import</h1>
 
-<h2>What is Export & Import</h2><hr>
+<h2>What is Export & Import</h2>
 <p>
 React 로 개발을 하다보면 파일을 나누어서 개발을 하게되는데, 
 분리된 파일들을 모듈(module) 이라고 부른다
@@ -25,7 +25,6 @@ React 로 개발을 하다보면 파일을 나누어서 개발을 하게되는�
 </p>
 
 <h2>EXPAMPLE</h2>
-<hr>
 
 ```
 person.js//
